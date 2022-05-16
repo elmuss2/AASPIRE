@@ -1,4 +1,4 @@
-name: CI
+name: FlutterCI
 on: [push, pull_request]
 jobs:
   Android:
