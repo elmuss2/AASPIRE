@@ -17,5 +17,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pipenv
           pipenv install
+      - name: Run Django check
+        run: pipenv run python manage.py check
+      - name: Run Django tests
+        run: pipenv run python manage.py test
       - name: Run migrations
         run: pipenv run python manage.py migrate
