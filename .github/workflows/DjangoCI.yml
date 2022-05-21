@@ -18,6 +18,8 @@ jobs:
           pip install pipenv
           pipenv install
           pipenv check
+      - name: Run linter / formatter
+        run: pipenv run pre-commit run --files ./*
       - name: Run Django check
         run: pipenv run python manage.py check
       - name: Run Django tests
