@@ -1,0 +1,22 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+repos:
+  - repo: https://github.com/psf/black
+    rev: ae2c0758c9e61a385df9700dc9c231bf54887041
+    hooks:
+      - id: black
+  - repo: https://github.com/PyCQA/isort
+    rev: c5e8fa75dda5f764d20f66a215d71c21cfa198e1
+    hooks:
+      - id: isort
+  - repo: https://github.com/PyCQA/autoflake
+    rev: d43d8a770c0f9ef2f68b368670ab882f6ca6ea03
+    hooks:
+      - id: autoflake
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: db7346d375eda68a0174f2c057dd97f2fbffe030
+    hooks:
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-ast
