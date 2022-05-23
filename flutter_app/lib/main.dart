@@ -48,6 +48,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController controllerUserName = TextEditingController();
+  TextEditingController controllerPassword = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -85,6 +88,53 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'We AAPSIRE to meet you',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(10),
+              child: const Text(
+                'Sign In',
+                style: TextStyle(fontSize: 20),
+              )
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: controllerUserName,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email / User Name',
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextField(
+                obscureText: true,
+                controller: controllerPassword,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: (){
+                // @TODO: Redirect To Help Page
+                print('not implemented yet');
+              },
+              child: const Text('Dont Have A Username?'),
+            ),
+            Container(
+              height: 50,
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child: ElevatedButton(
+                child: const Text('Login'),
+                  onPressed: () {
+                    print(controllerUserName.text);
+                    print(controllerPassword.text);
+                  },
+                ),
             ),
           ],
         ),
