@@ -9,6 +9,7 @@ graphene-django = "*"
 mysqlclient = "*"
 
 [dev-packages]
+pre-commit = "*"
 
 [requires]
 python_version = "3.9"
